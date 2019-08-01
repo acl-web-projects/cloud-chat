@@ -1,8 +1,5 @@
 import { createStore, compose, applyMiddleware } from 'redux'
-import { reduxFirestore, getFirestore } from 'redux-firestore'
-import { reactReduxFirebase, getFirebase } from 'react-redux-firebase'
 import thunk from 'redux-thunk'
-import firebaseConfig from 'config/firebase'
 
 import reducers from './ducks'
 
@@ -18,13 +15,8 @@ const store = createStore(
   reducers,
   compose(
     applyMiddleware(
-      thunk.withExtraArgument({
-        getFirebase,
-        getFirestore
-      })
+      thunk
     ),
-    reduxFirestore(firebaseConfig),
-    reactReduxFirebase(firebaseConfig)
   )
 )
 
