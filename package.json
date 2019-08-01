@@ -1,0 +1,21 @@
+{
+  "name": "node-chat",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/acl-web-projects/cloud-chat.git",
+  "author": "Arthur Lima <arthur-esc@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "build": "sucrase ./src -d ./dist --transforms imports"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1",
+    "sucrase": "^3.10.1"
+  }
+}
